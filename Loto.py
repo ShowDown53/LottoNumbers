@@ -19,9 +19,17 @@ def generator(amount):
 
 print("Welcome to the Lottery numbers generator.")
 
-ask4amount = raw_input("Please enter how many random numbers would you like to have: ")
+start = "yes"
 
-quantity_num = int(ask4amount)
-print generator(quantity_num)
+while start.lower() == "yes" or start.lower() == "y":
+    ask4amount = raw_input("Please enter how many random numbers would you like to have: ")
 
-print("END")
+    try:
+        quantity_num = int(ask4amount)
+        print generator(quantity_num)
+        start = raw_input("Would you like to generate more numbers? (Yes/No) ")
+    except:
+        print("You didn't enter a number.")
+        start = raw_input("Would you like to try again? (Yes/No) ")
+
+print("Understandable, Have a Nice Day (☞ﾟヮﾟ)☞")
